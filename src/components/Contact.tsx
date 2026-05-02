@@ -8,6 +8,7 @@ export const Contact: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [sshLogs, setSshLogs] = useState<string[]>([]);
   const [sshInput, setSshInput] = useState('');
+  const [submitError, setSubmitError] = useState('');
 
   const subjects = [
     { value: 'landing-page', label: 'Landing Page or Business Website' },
@@ -27,33 +28,41 @@ export const Contact: React.FC = () => {
     if (!formData.name || !formData.email || !formData.message) return;
 
     setIsSubmitting(true);
-    setFormType('ssh');
-    setSshLogs(['[00.00s] init: preparing local inquiry preview for Saurav Singh portfolio...']);
+    setSubmitError('');
 
-    const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+    try {
+      const response = await fetch('https://formspree.io/f/xrejbnpj', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        })
+      });
 
-    await sleep(800);
-    setSshLogs((prev) => [...prev, '[00.80s] check: visitor details captured in preview buffer.']);
+      if (!response.ok) {
+        throw new Error('Failed to send inquiry');
+      }
 
-    await sleep(700);
-    setSshLogs((prev) => [...prev, `[01.52s] packet: packaging inquiry for "${formData.name.toLowerCase().replace(/\s+/g, '_')}"...`]);
-
-    await sleep(700);
-    setSshLogs((prev) => [...prev, `[02.20s] route: project type tagged as "${formData.subject}"...`]);
-
-    await sleep(900);
-    setSshLogs((prev) => [...prev, '[03.10s] done: demo submission completed in UI preview mode.']);
-
-    await sleep(400);
-    setSshLogs((prev) => [
-      ...prev,
-      '--------------------------------------------------------------',
-      'SUCCESS: Inquiry preview completed.',
-      'Note: Connect a real email or backend service to receive live messages.'
-    ]);
-
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+      setSshLogs([
+        '[LIVE] Inquiry sent successfully through Formspree.',
+        `Name: ${formData.name}`,
+        `Email: ${formData.email}`,
+        `Subject: ${formData.subject}`,
+        'Status: delivered to your inbox endpoint.'
+      ]);
+      setIsSubmitted(true);
+      setFormData({ name: '', email: '', subject: 'landing-page', message: '' });
+    } catch (error) {
+      setSubmitError('Could not send the form right now. Please try again or contact directly by phone, email, or WhatsApp.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const executeSshCommand = (cmd: string) => {
@@ -124,7 +133,7 @@ export const Contact: React.FC = () => {
     if (formType === 'ssh' && sshLogs.length === 0 && !isSubmitted) {
       setSshLogs([
         'Welcome to the portfolio contact terminal.',
-        'This mode is a frontend preview. Connect a real backend to receive live inquiries.',
+        'The standard form now sends to Formspree. This CLI mode remains a visual extra.',
         'Type "help" to list commands.',
         'sauravsingh@visitor:~$'
       ]);
@@ -245,7 +254,7 @@ export const Contact: React.FC = () => {
             </div>
 
             <div className="rounded-lg border border-zinc-800 bg-zinc-900/60 px-4 py-3 text-xs text-zinc-400">
-              Zero-cost setup option: use direct call/email now, then connect this form later with Formspree or EmailJS.
+              Zero-cost setup active: this standard form now sends directly through Formspree.
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -324,15 +333,21 @@ export const Contact: React.FC = () => {
               {isSubmitting ? (
                 <>
                   <Terminal size={14} className="animate-pulse" />
-                  <span>Running Preview...</span>
+                  <span>Sending Inquiry...</span>
                 </>
               ) : (
                 <>
                   <Send size={14} />
-                  <span>Preview Inquiry Flow</span>
+                  <span>Send Inquiry</span>
                 </>
               )}
             </button>
+
+            {submitError && (
+              <div className="rounded-lg border border-rose-500/30 bg-rose-500/10 px-4 py-3 text-xs text-rose-300">
+                {submitError}
+              </div>
+            )}
 
             <a
               href="https://wa.me/9779840742866"
