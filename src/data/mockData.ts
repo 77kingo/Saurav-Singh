@@ -3,6 +3,10 @@ export interface Project {
   title: string;
   description: string;
   longDescription: string;
+  problem: string;
+  solution: string;
+  audience: string;
+  outcome: string;
   tags: string[];
   stars: number;
   forks: number;
@@ -76,6 +80,10 @@ export const PROJECTS: Project[] = [
     title: 'Travel Landing',
     description: 'A vibrant tourism-style landing page built to sell destinations with strong visuals and clear calls to action.',
     longDescription: 'This project focuses on conversion-first layout, responsive design, and travel storytelling. It is a strong fit for Nepali travel agencies, trekking operators, and local tour businesses that need a modern online presence.',
+    problem: 'Travel and tourism businesses need a visually strong first impression, but many pages fail to guide visitors toward inquiry or booking.',
+    solution: 'I created a tourism-style landing page with a bold hero, clean section flow, and clear calls to action that support visitor interest and conversion.',
+    audience: 'Travel agencies, trekking operators, tour companies, and destination campaigns.',
+    outcome: 'Shows my ability to build marketing pages that combine atmosphere, structure, and conversion-focused layout.',
     tags: ['HTML', 'CSS', 'JavaScript', 'Responsive'],
     stars: 24,
     forks: 7,
@@ -143,6 +151,10 @@ Single-page marketing site for destination campaigns.
     title: 'Quiz App',
     description: 'An interactive quiz experience with scoring, question flow, and clean UI.',
     longDescription: 'This app can be adapted for schools, training institutes, and online learning products in Nepal. It demonstrates interactive state handling, simple gamification, and an easy-to-understand user experience.',
+    problem: 'Learning tools need interaction and feedback, but many simple education pages feel static and unengaging.',
+    solution: 'I built a quiz flow with scoring, state handling, and a clear user path from question to result.',
+    audience: 'Schools, exam preparation platforms, learning products, and training institutes.',
+    outcome: 'Demonstrates frontend logic, user feedback patterns, and interactive educational UI design.',
     tags: ['React', 'JavaScript', 'Quiz Logic', 'UI'],
     stars: 18,
     forks: 5,
@@ -206,6 +218,10 @@ Interactive quiz project built for learning-focused interfaces.
     title: 'Foodie App',
     description: 'A food ordering style interface that showcases menus, offers, and user-friendly browsing.',
     longDescription: 'This concept works well for restaurants, cafes, cloud kitchens, and food brands in Kathmandu and beyond. It highlights visual hierarchy, product cards, and ordering-focused interaction patterns.',
+    problem: 'Food businesses need visitors to scan menus quickly, notice offers fast, and stay interested on mobile devices.',
+    solution: 'I designed a food-focused interface with clear menu cards, pricing visibility, and layout patterns that support browsing and ordering intent.',
+    audience: 'Restaurants, cafes, cloud kitchens, and food delivery-focused brands.',
+    outcome: 'Shows my ability to create product-card-driven layouts with strong visual hierarchy and mobile-friendly flow.',
     tags: ['React', 'Food UI', 'Cards', 'Responsive'],
     stars: 22,
     forks: 6,
@@ -274,6 +290,10 @@ Food ordering concept tailored for restaurants and cafes.
     title: 'Music Player',
     description: 'A custom music player interface with playback controls and polished visual interaction.',
     longDescription: 'This project shows attention to animation, interface rhythm, and user-friendly controls. It is useful as a portfolio piece to demonstrate frontend polish and component-driven thinking.',
+    problem: 'Media interfaces need to feel smooth and intuitive, but weak control design quickly makes them frustrating to use.',
+    solution: 'I built a custom player UI with playback controls, progress handling, and a more polished visual shell.',
+    audience: 'Frontend-heavy products, media UI concepts, and brands that want a polished interactive feel.',
+    outcome: 'Highlights interface polish, interaction details, and attention to user experience in component-driven UI.',
     tags: ['JavaScript', 'Audio', 'UI', 'Frontend'],
     stars: 20,
     forks: 4,
@@ -332,6 +352,10 @@ Frontend UI experiment built around audio controls and visual polish.
     title: 'Hamro Khet',
     description: 'A local agriculture-focused web product designed around farming visibility and simple information access.',
     longDescription: 'Hamro Khet is the strongest example of a Nepal-focused digital product in this portfolio. It reflects practical thinking for local audiences, simple navigation, and a service concept that can grow into a useful marketplace or agriculture platform.',
+    problem: 'Local-first agriculture ideas often need simple language and practical structure, but many digital products are built without local usability in mind.',
+    solution: 'I shaped Hamro Khet around approachable wording, easy navigation, and a useful layout for agriculture-related discovery and visibility.',
+    audience: 'Agro startups, farming communities, cooperatives, and local product initiatives.',
+    outcome: 'This is one of my strongest Nepal-focused case studies and shows how I adapt design for local context instead of generic trends.',
     tags: ['Local Product', 'Agriculture', 'Responsive', 'Branding'],
     stars: 26,
     forks: 8,
@@ -387,6 +411,10 @@ Local-market concept project with an agriculture focus.
     title: 'Janseva',
     description: 'A service-oriented web app concept for organized forms, records, and public-facing workflows.',
     longDescription: 'Janseva represents a more practical utility-driven build. It can suit cooperatives, service centers, local organizations, or internal admin workflows where clarity and task completion matter more than heavy visual effects.',
+    problem: 'Service-based organizations need clarity, structured forms, and easy task completion more than flashy visuals.',
+    solution: 'I created a practical app concept centered on forms, records, and dashboard-style workflow screens.',
+    audience: 'Service centers, cooperatives, local organizations, and admin-oriented teams.',
+    outcome: 'Shows my ability to move beyond landing pages into utility-focused interfaces built for task completion and structure.',
     tags: ['React', 'Forms', 'Utility App', 'Admin Flow'],
     stars: 19,
     forks: 5,

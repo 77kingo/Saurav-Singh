@@ -194,6 +194,25 @@ export const MockIDE: React.FC<MockIDEProps> = ({ project }) => {
         </div>
       </div>
 
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3 border-b border-zinc-800 bg-zinc-950/70 px-4 py-3">
+        <div className="rounded-lg border border-zinc-800 bg-zinc-900/60 p-3">
+          <div className="text-2xs font-mono uppercase tracking-wider text-zinc-500">Problem</div>
+          <p className="mt-2 text-xs leading-relaxed text-zinc-300">{project.problem}</p>
+        </div>
+        <div className="rounded-lg border border-zinc-800 bg-zinc-900/60 p-3">
+          <div className="text-2xs font-mono uppercase tracking-wider text-zinc-500">Solution</div>
+          <p className="mt-2 text-xs leading-relaxed text-zinc-300">{project.solution}</p>
+        </div>
+        <div className="rounded-lg border border-zinc-800 bg-zinc-900/60 p-3">
+          <div className="text-2xs font-mono uppercase tracking-wider text-zinc-500">Audience</div>
+          <p className="mt-2 text-xs leading-relaxed text-zinc-300">{project.audience}</p>
+        </div>
+        <div className="rounded-lg border border-zinc-800 bg-zinc-900/60 p-3">
+          <div className="text-2xs font-mono uppercase tracking-wider text-zinc-500">Outcome</div>
+          <p className="mt-2 text-xs leading-relaxed text-zinc-300">{project.outcome}</p>
+        </div>
+      </div>
+
       {/* IDE Main */}
       <div className="flex-1 flex overflow-hidden">
         {/* File Tree Explorer */}
