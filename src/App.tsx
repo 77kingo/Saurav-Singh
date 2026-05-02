@@ -240,6 +240,12 @@ export default function App() {
               >
                 <Briefcase size={14} /> View Services
               </button>
+              <a
+                href="tel:9840742866"
+                className="px-5 py-2.5 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 text-zinc-300 rounded-xl cursor-pointer transition flex items-center gap-2"
+              >
+                <Mail size={14} className={accentColor} /> Call 9840742866
+              </a>
               <button 
                 onClick={() => handleTriggerSection('about')}
                 className="px-5 py-2.5 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 text-zinc-300 rounded-xl cursor-pointer transition flex items-center gap-2"
@@ -440,7 +446,11 @@ export default function App() {
 
           <div className="flex flex-col md:items-end text-3xs">
             <div>Built with <Heart size={10} className="inline text-rose-500 mx-0.5" /> in React, Vite, and Tailwind CSS</div>
-            <div className="text-zinc-500 mt-0.5">Phone: 9840742866 // Email: singhsaurav8899@gmail.com</div>
+            <div className="text-zinc-500 mt-0.5">
+              <a href="tel:9840742866" className="hover:text-emerald-400 transition">Phone: 9840742866</a>
+              <span> // </span>
+              <a href="mailto:singhsaurav8899@gmail.com" className="hover:text-emerald-400 transition">Email: singhsaurav8899@gmail.com</a>
+            </div>
             <div className="text-zinc-700 mt-0.5">© 2026 Saurav Singh. Portfolio tailored for modern Nepali web clients.</div>
           </div>
         </div>

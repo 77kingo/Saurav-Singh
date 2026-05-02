@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Send, Terminal, Shield, CheckCircle, ArrowRight, User, Mail, MessageSquare, Briefcase } from 'lucide-react';
+import { Send, Terminal, Shield, CheckCircle, ArrowRight, User, Mail, MessageSquare, Briefcase, Phone, ExternalLink } from 'lucide-react';
 
 export const Contact: React.FC = () => {
   const [formType, setFormType] = useState<'standard' | 'ssh'>('standard');
@@ -142,8 +142,12 @@ export const Contact: React.FC = () => {
         <div className="space-y-4 flex-1">
           <div>
             <div className="text-zinc-500 font-bold uppercase text-4xs">Direct Contact</div>
-            <div className="text-zinc-300 font-bold">9840742866</div>
-            <div className="text-zinc-300 break-all">singhsaurav8899@gmail.com</div>
+            <a href="tel:9840742866" className="text-zinc-300 font-bold hover:text-emerald-400 transition">
+              9840742866
+            </a>
+            <a href="mailto:singhsaurav8899@gmail.com" className="text-zinc-300 break-all hover:text-emerald-400 transition">
+              singhsaurav8899@gmail.com
+            </a>
             <p className="text-3xs text-zinc-500 mt-0.5">Call or email directly if you want to discuss your project faster.</p>
           </div>
 
@@ -223,6 +227,27 @@ export const Contact: React.FC = () => {
           </div>
         ) : formType === 'standard' ? (
           <form onSubmit={handleStandardSubmit} className="flex-1 flex flex-col space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <a
+                href="tel:9840742866"
+                className="flex items-center justify-center gap-2 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-xs font-mono font-bold text-emerald-400 transition hover:bg-emerald-500/20"
+              >
+                <Phone size={14} />
+                <span>Call Now</span>
+              </a>
+              <a
+                href="mailto:singhsaurav8899@gmail.com?subject=Project%20Inquiry%20from%20Portfolio"
+                className="flex items-center justify-center gap-2 rounded-lg border border-zinc-800 bg-zinc-900 px-4 py-2 text-xs font-mono font-bold text-zinc-200 transition hover:bg-zinc-800"
+              >
+                <Mail size={14} />
+                <span>Email Directly</span>
+              </a>
+            </div>
+
+            <div className="rounded-lg border border-zinc-800 bg-zinc-900/60 px-4 py-3 text-xs text-zinc-400">
+              Zero-cost setup option: use direct call/email now, then connect this form later with Formspree or EmailJS.
+            </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-1 relative">
                 <label className="text-3xs font-mono font-bold text-zinc-500 uppercase">visitor_name</label>
@@ -308,6 +333,16 @@ export const Contact: React.FC = () => {
                 </>
               )}
             </button>
+
+            <a
+              href="https://wa.me/9779840742866"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 rounded-lg border border-zinc-800 bg-zinc-900 px-4 py-2 text-xs font-mono font-bold text-zinc-200 transition hover:bg-zinc-800"
+            >
+              <ExternalLink size={14} />
+              <span>Open WhatsApp Chat</span>
+            </a>
           </form>
         ) : (
           <div className="flex-1 bg-zinc-950 rounded-lg border border-zinc-800 p-4 font-mono text-2xs text-emerald-400 overflow-hidden flex flex-col select-text">

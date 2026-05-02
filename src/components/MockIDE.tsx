@@ -174,6 +174,26 @@ export const MockIDE: React.FC<MockIDEProps> = ({ project }) => {
         </div>
       </div>
 
+      <div className="grid grid-cols-1 lg:grid-cols-[1.7fr_1fr] gap-3 border-b border-zinc-800 bg-zinc-950/80 px-4 py-3">
+        <div>
+          <div className="text-2xs font-mono uppercase tracking-wider text-zinc-500">Project Summary</div>
+          <p className="mt-1 text-xs leading-relaxed text-zinc-300">{project.longDescription}</p>
+        </div>
+        <div className="rounded-lg border border-zinc-800 bg-zinc-900/60 p-3">
+          <div className="text-2xs font-mono uppercase tracking-wider text-zinc-500">Best Fit</div>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full border border-zinc-700 bg-zinc-900 px-2 py-1 text-3xs font-mono text-zinc-300"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* IDE Main */}
       <div className="flex-1 flex overflow-hidden">
         {/* File Tree Explorer */}
