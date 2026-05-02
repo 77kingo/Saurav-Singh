@@ -5,6 +5,7 @@ import { MockIDE } from './components/MockIDE';
 import { Services } from './components/Services';
 import { Blog } from './components/Blog';
 import { Contact } from './components/Contact';
+import { Trust } from './components/Trust';
 import { PROJECTS, SKILLS, Project } from './data/mockData';
 import { 
   Code2, 
@@ -391,6 +392,10 @@ export default function App() {
         {/* Section: Services (Pricing) */}
         <section id="services" className="pt-8 scroll-mt-20">
           <Services onContactClick={() => handleTriggerSection('contact')} />
+        </section>
+
+        <section id="trust" className="pt-8 scroll-mt-20">
+          <Trust />
         </section>
 
         {/* Section: Blog (Notes) */}

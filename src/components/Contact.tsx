@@ -208,9 +208,9 @@ export const Contact: React.FC = () => {
               <CheckCircle size={32} />
             </div>
             <div className="space-y-1">
-              <h3 className="text-base font-bold text-white">PREVIEW COMPLETE</h3>
+              <h3 className="text-base font-bold text-white">INQUIRY SENT SUCCESSFULLY</h3>
               <p className="text-xs text-zinc-400 max-w-sm">
-                Your inquiry was processed inside the demo UI. Connect a real email service or backend if you want this form to receive live messages.
+                Your message was sent through the live Formspree contact form. I can now receive inquiries from this portfolio at zero cost.
               </p>
             </div>
 
